@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>ШАПКА САЙТА</h1>
+    <header class="container header">
+        <h1 class="logo">MyMoney</h1>
+        <nav class="menu">
+            <a href="#">Главная</a>
+            <a href="#">Возможности</a>
+            <a href="#">Подписка</a>
+            <a href="#">О нас</a>
+            <a class="sign-in" href="#">Войти</a>
+        </nav>
     </header>
-    <main>
-        {% block main %}
-        {% endblock %}        
+    <main class="container">
+        <div class="main">
+            {% block main %}
+            {% endblock %}
+        </div>
     </main>
-    <footer>
-        <p><small>&copy;Конроль финансов; автор Варламов Дамир</small></p>
+    <footer class="footer">
+        <p>&copy;2024-2025 год, Конроль финансов, Варламов Дамир</p>
     </footer>
 </body>
 </html>

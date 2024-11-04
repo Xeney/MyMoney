@@ -2,3 +2,72 @@
     margin: 0;
     padding: 0;
 }
+
+$accent-color: #fbff00;
+$black-color: #1c1c1c;
+$white-color: #fff;
+
+:root {
+    background-color: #1c1c1c;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 5px double $white-color;
+    margin-bottom: 50px;
+    .logo {
+        font-size: 35px;
+        color: $accent-color;
+        text-shadow: 0 0 10px $accent-color;
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            margin-left: 20px;
+            color: $white-color;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.1s;
+            &:hover {
+                color: $accent-color;
+            }
+            &.sign-in {
+                background-color: $accent-color;
+                color: $black-color;
+                padding: 5px 20px;
+                border-radius: 5px;
+                &:hover {
+                    box-shadow: 0 0 10px 1px $accent-color;
+                    color: $accent-color;
+                    background-color: $black-color;
+                }
+            }
+        }
+    }
+}
+
+.main {
+    min-height: 500px;
+    background-color: #000;
+    border-radius: 20px;
+    padding: 20px 40px;
+}
+
+.footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+}
