@@ -7,24 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="container header">
-        <h1 class="logo">MyMoney</h1>
-        <nav class="menu">
-            <a href="#">Главная</a>
-            <a href="#">Возможности</a>
-            <a href="#">Подписка</a>
-            <a href="#">О нас</a>
-            <a class="sign-in" href="#">Войти</a>
-        </nav>
-    </header>
+    {% include 'header.html' %}
     <main class="container">
         <div class="main">
             {% block main %}
             {% endblock %}
         </div>
     </main>
-    <footer class="footer">
-        <p>&copy;2024-2025 год, Конроль финансов, Варламов Дамир</p>
-    </footer>
+    {% include 'footer.html' %}
 </body>
 </html>

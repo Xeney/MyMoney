@@ -1,16 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Mitr:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
-$accent-color: #fbff00;
-$black-color: #1c1c1c;
+$accent-color: #276CEE;
+$black-color: #000;
 $white-color: #fff;
+$secondary-color: #F4F4F4;
+$gray-color: #787878;
 
 :root {
-    background-color: #1c1c1c;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: $accent-color;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.logo {
+    font-family: 'Mitr';
+    font-size: 36px;
+    color: $accent-color;
+}
+.small-logo {
+    font-family: 'Mitr';
+    font-size: 24px;
+    color: $accent-color;
 }
 
 .container {
@@ -20,54 +41,82 @@ $white-color: #fff;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 5px double $white-color;
-    margin-bottom: 50px;
-    .logo {
-        font-size: 35px;
-        color: $accent-color;
-        text-shadow: 0 0 10px $accent-color;
-    }
-    .menu {
+    padding: 25px 0;
+    background-color: $white-color;
+    .container {
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+    }
+    .blocks {
+        display: flex;
+        flex-direction: column;
         a {
-            margin-left: 20px;
-            color: $white-color;
+            color: $black-color;
             text-decoration: none;
-            font-size: 20px;
-            transition: all 0.1s;
-            &:hover {
-                color: $accent-color;
+            display: block;
+        }
+        .contact, .menu {
+            display: flex;
+            justify-content: end;
+            font-size: 13px;
+            font-weight: 500;
+            grid-gap: 40px;
+        }
+        .contact {
+            .icon-href {
+                min-width: 150px;
+                display: flex;
+                grid-gap: 15px;
             }
-            &.sign-in {
-                background-color: $accent-color;
-                color: $black-color;
-                padding: 5px 20px;
-                border-radius: 5px;
-                &:hover {
-                    box-shadow: 0 0 10px 1px $accent-color;
-                    color: $accent-color;
-                    background-color: $black-color;
-                }
+        }
+        .menu {
+            grid-gap: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 10px;
+            a:hover {
+                color: $accent-color;
             }
         }
     }
 }
 
-.main {
-    min-height: 500px;
-    background-color: #000;
-    border-radius: 20px;
-    padding: 20px 40px;
+.footer {
+    margin-top: 40px;
+    .footer-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+        border-top: 1px solid $black-color; 
+        border-bottom: 1px solid $black-color;
+        .logo {
+            margin-left: 50px;
+        }
+        .menu {
+            display: flex;
+            justify-content: end;
+            grid-gap: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            a {
+                text-decoration: none;
+                color: $black-color;
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }    
+    }
+    .copyright {
+        font-size: 16px;
+        padding: 20px 0;
+        text-align: center;
+        color: $gray-color;
+    }
 }
 
-.footer {
-    padding: 10px;
-    text-align: center;
-    font-size: 15px;
+.main {
+    min-height: 635px;
 }

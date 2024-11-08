@@ -1,12 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Mitr:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
 :root {
-  background-color: #1c1c1c;
-  color: white;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: #276CEE;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: "Mitr";
+  font-size: 36px;
+  color: #276CEE;
+}
+
+.small-logo {
+  font-family: "Mitr";
+  font-size: 24px;
+  color: #276CEE;
 }
 
 .container {
@@ -16,54 +35,80 @@
 }
 
 .header {
+  padding: 25px 0;
+  background-color: #fff;
+}
+.header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 5px double #fff;
-  margin-bottom: 50px;
 }
-.header .logo {
-  font-size: 35px;
-  color: #fbff00;
-  text-shadow: 0 0 10px #fbff00;
-}
-.header .menu {
+.header .blocks {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 }
-.header .menu a {
-  margin-left: 20px;
-  color: #fff;
+.header .blocks a {
+  color: #000;
   text-decoration: none;
-  font-size: 20px;
-  transition: all 0.1s;
+  display: block;
 }
-.header .menu a:hover {
-  color: #fbff00;
+.header .blocks .contact, .header .blocks .menu {
+  display: flex;
+  justify-content: end;
+  font-size: 13px;
+  font-weight: 500;
+  grid-gap: 40px;
 }
-.header .menu a.sign-in {
-  background-color: #fbff00;
-  color: #1c1c1c;
-  padding: 5px 20px;
-  border-radius: 5px;
+.header .blocks .contact .icon-href {
+  min-width: 150px;
+  display: flex;
+  grid-gap: 15px;
 }
-.header .menu a.sign-in:hover {
-  box-shadow: 0 0 10px 1px #fbff00;
-  color: #fbff00;
-  background-color: #1c1c1c;
+.header .blocks .menu {
+  grid-gap: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 10px;
 }
-
-.main {
-  min-height: 500px;
-  background-color: #000;
-  border-radius: 20px;
-  padding: 20px 40px;
+.header .blocks .menu a:hover {
+  color: #276CEE;
 }
 
 .footer {
-  padding: 10px;
+  margin-top: 40px;
+}
+.footer .footer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.footer .footer-head .logo {
+  margin-left: 50px;
+}
+.footer .footer-head .menu {
+  display: flex;
+  justify-content: end;
+  grid-gap: 30px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.footer .footer-head .menu a {
+  text-decoration: none;
+  color: #000;
+}
+.footer .footer-head .menu a:hover {
+  color: #276CEE;
+}
+.footer .copyright {
+  font-size: 16px;
+  padding: 20px 0;
   text-align: center;
-  font-size: 15px;
+  color: #787878;
+}
+
+.main {
+  min-height: 635px;
 }/*# sourceMappingURL=style.css.map */
