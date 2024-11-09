@@ -82,6 +82,123 @@ a {
     }
 }
 
+.main {
+    .hello {
+        background: #1c1c1c url("../images/background-home.jpg") no-repeat top center;
+        background-size: cover;
+        min-height: 800px;
+        display: flex;
+        align-items: center;
+        color: $white-color;
+        .title {
+            font-size: 70px;
+        }
+        .description {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .accent-but {
+            display: flex;
+            justify-content: space-between;
+            grid-gap: 30px;
+            align-items: center;
+            margin-top: 50px;
+            font-size: 24px;
+            background-color: $accent-color;
+            color: $white-color;
+            text-decoration: none;
+            width: max-content;
+            padding: 15px 30px;
+            border-radius: 12px;
+            a, svg {
+                transition: all 0.3s;
+            }
+            svg {
+                max-width: 25px;
+            }
+            &:hover {
+                background-color: $secondary-color;
+                color: $black-color;
+                svg path {
+                    fill: $black-color;
+                }
+            }
+            
+        }
+
+    }
+    .list-card {
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: top;
+        text-align: center;
+        .card {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 30px;
+            max-width: 350px;
+            .title {
+                font-size: 24px;
+            }
+            .text {
+                font-size: 20px;
+            }
+        }
+    }
+    .info-block {
+        background-color: $secondary-color;
+        padding: 36px 0 50px 0;
+        .title {
+            font-size: 36px;
+        }
+        .text {
+            margin-top: 50px;
+            font-size: 24px;
+        }
+    }
+    .cart-img {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-gap: 130px;
+        .cart {
+            background-color: $accent-color;
+            color: $white-color;
+            border-radius: 20px;
+            padding: 20px 25px 25px 25px;
+            .title {
+                font-size: 36px;
+            }
+            .text {
+                max-width: 574px;
+                margin-top: 20px;
+                font-size: 20px;
+            }
+            .svg-block {
+                display: flex;
+                justify-content: end;
+                * {
+                    transition: all 0.1s;
+                }
+                svg {
+                    width: 40px;
+                }
+                &:hover {
+                    svg {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+        .img {
+            border-radius: 20px;
+            background: $black-color url('../images/home/back-money.jpg') no-repeat center center;
+            background-size: cover;
+        }
+    }
+}
+
 .footer {
     margin-top: 40px;
     .footer-head {

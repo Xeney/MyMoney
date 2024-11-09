@@ -74,6 +74,118 @@ a:hover {
   color: #276CEE;
 }
 
+.main .hello {
+  background: #1c1c1c url("../images/background-home.jpg") no-repeat top center;
+  background-size: cover;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.main .hello .title {
+  font-size: 70px;
+}
+.main .hello .description {
+  margin-top: 20px;
+  font-size: 24px;
+}
+.main .hello .accent-but {
+  display: flex;
+  justify-content: space-between;
+  grid-gap: 30px;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 24px;
+  background-color: #276CEE;
+  color: #fff;
+  text-decoration: none;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 15px 30px;
+  border-radius: 12px;
+}
+.main .hello .accent-but a, .main .hello .accent-but svg {
+  transition: all 0.3s;
+}
+.main .hello .accent-but svg {
+  max-width: 25px;
+}
+.main .hello .accent-but:hover {
+  background-color: #F4F4F4;
+  color: #000;
+}
+.main .hello .accent-but:hover svg path {
+  fill: #000;
+}
+.main .list-card {
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: top;
+  text-align: center;
+}
+.main .list-card .card {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+  max-width: 350px;
+}
+.main .list-card .card .title {
+  font-size: 24px;
+}
+.main .list-card .card .text {
+  font-size: 20px;
+}
+.main .info-block {
+  background-color: #F4F4F4;
+  padding: 36px 0 50px 0;
+}
+.main .info-block .title {
+  font-size: 36px;
+}
+.main .info-block .text {
+  margin-top: 50px;
+  font-size: 24px;
+}
+.main .cart-img {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 130px;
+}
+.main .cart-img .cart {
+  background-color: #276CEE;
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px 25px 25px 25px;
+}
+.main .cart-img .cart .title {
+  font-size: 36px;
+}
+.main .cart-img .cart .text {
+  max-width: 574px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.main .cart-img .cart .svg-block {
+  display: flex;
+  justify-content: end;
+}
+.main .cart-img .cart .svg-block * {
+  transition: all 0.1s;
+}
+.main .cart-img .cart .svg-block svg {
+  width: 40px;
+}
+.main .cart-img .cart .svg-block:hover svg {
+  transform: scale(1.2);
+}
+.main .cart-img .img {
+  border-radius: 20px;
+  background: #000 url("../images/home/back-money.jpg") no-repeat center center;
+  background-size: cover;
+}
+
 .footer {
   margin-top: 40px;
 }
