@@ -6,6 +6,7 @@
 }
 
 :root {
+  min-width: 1600px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -149,22 +150,23 @@ a:hover {
 }
 .main .cart-img {
   margin-top: 100px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  display: flex;
   grid-gap: 130px;
 }
 .main .cart-img .cart {
+  width: 55%;
   background-color: #276CEE;
   color: #fff;
   border-radius: 20px;
   padding: 20px 25px 25px 25px;
 }
 .main .cart-img .cart .title {
+  color: white;
   font-size: 36px;
 }
 .main .cart-img .cart .text {
   max-width: 574px;
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 20px;
 }
 .main .cart-img .cart .svg-block {
@@ -181,9 +183,67 @@ a:hover {
   transform: scale(1.2);
 }
 .main .cart-img .img {
+  width: 45%;
   border-radius: 20px;
-  background: #000 url("../images/home/back-money.jpg") no-repeat center center;
+}
+.main .cart-img .img.one {
+  background: #000 url("../images/home/back-money.jpg") no-repeat bottom center;
   background-size: cover;
+}
+.main .cart-img .img.two {
+  background: #000 url("../images/home/money-logo.jpg") no-repeat center center;
+  background-size: cover;
+}
+.main .about {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 170px;
+  margin-bottom: 140px;
+}
+.main .about .content .pretext {
+  font-size: 24px;
+  color: #787878;
+  font-weight: 700;
+  opacity: 0.5;
+}
+.main .about .content .title {
+  font-size: 90px;
+  margin-bottom: 50px;
+}
+.main .about .content .text {
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 830px;
+}
+.main .about .blocks-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 30px;
+}
+.main .about .blocks-4 .block {
+  border-radius: 50px;
+  padding: 30px 40px;
+  background-color: #F4F4F4;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1764705882);
+}
+.main .about .blocks-4 .block .title {
+  font-size: 55px;
+  margin-bottom: 30px;
+}
+.main .about .blocks-4 .block .text, .main .about .blocks-4 .block a {
+  font-size: 14px;
+}
+.main .about .blocks-4 .block .text {
+  max-width: 177px;
+  margin-bottom: 50px;
+}
+.main .about .blocks-4 .block.accent {
+  background-color: #276CEE;
+  color: #fff;
+}
+.main .about .blocks-4 .block.accent a {
+  color: #fff;
 }
 
 .footer {

@@ -11,8 +11,10 @@ $black-color: #000;
 $white-color: #fff;
 $secondary-color: #F4F4F4;
 $gray-color: #787878;
+$container-width: 1500px;
 
 :root {
+    min-width: calc($container-width + 100px);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -37,7 +39,7 @@ a {
 .container {
     width: 100%;
     margin: 0 auto;
-    max-width: 1500px;
+    max-width: $container-width;
 }
 
 .header {
@@ -159,20 +161,21 @@ a {
     }
     .cart-img {
         margin-top: 100px;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
+        display: flex;
         grid-gap: 130px;
         .cart {
+            width: 55%;
             background-color: $accent-color;
             color: $white-color;
             border-radius: 20px;
             padding: 20px 25px 25px 25px;
             .title {
+                color: white;
                 font-size: 36px;
             }
             .text {
                 max-width: 574px;
-                margin-top: 20px;
+                margin-top: 15px;
                 font-size: 20px;
             }
             .svg-block {
@@ -192,9 +195,69 @@ a {
             }
         }
         .img {
+            width: 45%;
             border-radius: 20px;
-            background: $black-color url('../images/home/back-money.jpg') no-repeat center center;
-            background-size: cover;
+            &.one {
+                background: $black-color url('../images/home/back-money.jpg') no-repeat bottom center;
+                background-size: cover;
+            }
+            &.two {
+                background: $black-color url('../images/home/money-logo.jpg') no-repeat center center;
+                background-size: cover;
+            }
+        }
+    }
+    .about {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 170px;
+        margin-bottom: 140px;
+        .content {
+            .pretext {
+                font-size: 24px;
+                color: $gray-color;
+                font-weight: 700;
+                opacity: 0.5;
+            }
+            .title {
+                font-size: 90px;
+                margin-bottom: 50px;
+            }
+            .text {
+                font-size: 18px;
+                font-weight: 300;
+                max-width: 830px;
+            }
+        }
+        .blocks-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 30px;
+            .block {
+                border-radius: 50px;
+                padding: 30px 40px;
+                background-color: $secondary-color;
+                box-shadow: 4px 4px 4px 0 #0000002d;
+                .title {
+                    font-size: 55px;
+                    margin-bottom: 30px;
+                }
+                .text, a {
+                    font-size: 14px;
+                }
+                .text {
+                    max-width: 177px;
+                    margin-bottom: 50px;
+                }
+                &.accent {
+                    background-color: $accent-color;
+                    color: $white-color;
+                    a {
+                        color: $white-color;
+                    }
+                }
+            }
         }
     }
 }
