@@ -90,6 +90,9 @@ a:hover {
   margin-top: 20px;
   font-size: 24px;
 }
+.main .hello * {
+  transition: all 0.3s;
+}
 .main .hello .accent-but {
   display: flex;
   justify-content: space-between;
@@ -104,9 +107,6 @@ a:hover {
   width: max-content;
   padding: 15px 30px;
   border-radius: 12px;
-}
-.main .hello .accent-but a, .main .hello .accent-but svg {
-  transition: all 0.3s;
 }
 .main .hello .accent-but svg {
   max-width: 25px;

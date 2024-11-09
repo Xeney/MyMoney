@@ -99,6 +99,9 @@ a {
             margin-top: 20px;
             font-size: 24px;
         }
+        * {
+            transition: all 0.3s;
+        }
         .accent-but {
             display: flex;
             justify-content: space-between;
@@ -112,9 +115,7 @@ a {
             width: max-content;
             padding: 15px 30px;
             border-radius: 12px;
-            a, svg {
-                transition: all 0.3s;
-            }
+            
             svg {
                 max-width: 25px;
             }
