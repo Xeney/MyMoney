@@ -261,6 +261,26 @@ a {
             }
         }
     }
+    .secure {
+        font-size: 20px;
+        margin-top: 100px;
+        margin-bottom: 140px;
+        p {
+            max-width: 1000px;
+            margin-bottom: 50px;
+        }
+        .title {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .data {
+            margin-bottom: 20px;
+        }
+        .description {
+            max-width: 880px;
+            margin-bottom: 70px;
+        }
+    }
 }
 
 .footer {
