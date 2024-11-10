@@ -118,6 +118,19 @@ a:hover {
 .main .hello .accent-but:hover svg path {
   fill: #000;
 }
+.main .hello.min {
+  min-height: 600px;
+  text-align: center;
+}
+.main .hello.min > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main .hello.min .description {
+  max-width: 680px;
+}
 .main .list-card {
   margin: 50px auto;
   display: flex;
@@ -264,6 +277,52 @@ a:hover {
 .main .secure .description {
   max-width: 880px;
   margin-bottom: 70px;
+}
+.main .feedback .feedback-form {
+  background-color: #276CEE;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+.main .feedback .feedback-form .title {
+  font-size: 32px;
+}
+.main .feedback .feedback-form .input {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.main .feedback .feedback-form #message {
+  resize: vertical;
+  height: 100px;
+}
+.main .feedback .feedback-form .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 15px 35px;
+  font-size: 24px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.1s;
+}
+.main .feedback .feedback-form .btn:hover {
+  background-color: #276CEE;
+  color: #fff;
+}
+.main .feedback .feedback-form .error {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  color: #ee2727;
 }
 
 .footer {

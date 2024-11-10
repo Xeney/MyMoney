@@ -1,7 +1,41 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<div class="hello min">
+    <div class="container">
+        <h2 class="title">Свяжитесь с нами!</h2>
+        <p class="description">Мы всегда рады вашим вопросам и отзывам! Пожалуйста, заполните форму ниже, и мы свяжемся с вами в кратчайшие сроки.</p>
+    </div>
+</div>
+<div class="about container">
+    <div class="content">
+        <p class="pretext">О нас</p>
+        <h1 class="logo title">MyMoney</h1>
+        <p class="text">
+            MyMoney — это инновационная платформа, созданная для того, чтобы помочь людям обрести финансовую грамотность и уверенность в своих финансовых решениях.
+            Мы предлагаем удобные инструменты для управления бюджетом, планирования расходов и достижения финансовых целей. Наша цель — сделать финансовое
+            образование доступным и понятным для каждого, чтобы вы могли уверенно строить свое будущее. С MyMoney вы получите поддержку на каждом шагу своего
+            финансового пути.
+        </p>
+    </div>
+    <div class="feedback">
+        <form class="feedback-form" method="post">
+            <h2 class="title">Форма обратной связи</h2>
+            {% for field_name in form.errors %}
+                {% for error in form.errors[field_name] %}
+                    <p class="error">{{ field_name }}: {{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+            {{ form.csrf_token }}
+            {{ form.name(class="input", placeholder="ФИО") }}
+            {{ form.email(class="input", placeholder="Email") }}
+            {{ form.title_message(class="input", placeholder="Тема сообщения") }}
+            {{ form.message(class="input", placeholder="Сообщение") }}
+            <button class="btn" type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
 
-<p>обратная связь</p>
+
 
 {% endblock %}
