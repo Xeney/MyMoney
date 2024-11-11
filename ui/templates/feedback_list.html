@@ -1,0 +1,23 @@
+{{template "header.html" .}}
+<div class="hello min">
+    <div class="container">
+        <h2 class="title">Вы на странице просмотра всех запросов</h2>
+        <p class="description">Эта страница доступна только администратору.</p>
+    </div>
+</div>
+<div class="container">
+    <h2 style="margin-top: 100px; font-size: 36px;">Обращения пользователей</h2>
+    <div class="feedback-list">
+        <div class="card">
+            <h2 class="title">Title</h2>
+            <h3 class="theme">Theme message</h3>
+            <p class="message">Message</p>
+            <div class="btn-2">
+                <a class="btn" href="mailto:example@mail.ru">Ответить</a>
+                <a class="btn del" href="/feedback/view/del/0">Удалить</a>
+            </div>
+        </div>
+        <p>Обращений нет</p>
+    </div>  
+</div>
+{{template "footer.html" .}}

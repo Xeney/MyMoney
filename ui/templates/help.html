@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block main %}
+{{template "header.html" .}}
 <div class="hello min">
     <div class="container">
         <h2 class="title">Помощь и поддержка</h2>
@@ -39,7 +37,4 @@
         </p>
     </div>
 </div>
-
-
-
-{% endblock %}
+{{template "footer.html" .}}

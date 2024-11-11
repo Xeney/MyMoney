@@ -1,7 +1,4 @@
-{% extends 'base.html' %}
-
-{% block main %}
-
+{{template "header.html" .}}
 <div class="secure container">
     <h1 class="title">Политика конфиденциальности</h1>
     <p class="data">Дата вступления в силу: 10.11.2024</p>
@@ -52,5 +49,4 @@
         пожалуйста, свяжитесь с нами по адресу: <a href="mailto:help@mymoney.ru">help@mymoney.ru</a>.
     </p>
 </div>
-
-{% endblock %}
+{{template "footer.html" .}}

@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block main %}
+{{template "header.html" .}}
 <div class="hello min">
     <div class="container">
         <h2 class="title">Свяжитесь с нами!</h2>
@@ -21,21 +19,13 @@
     <div class="feedback">
         <form class="feedback-form" method="post">
             <h2 class="title">Форма обратной связи</h2>
-            {% for field_name in form.errors %}
-                {% for error in form.errors[field_name] %}
-                    <p class="error">{{ field_name }}: {{ error }}</p>
-                {% endfor %}
-            {% endfor %}
-            {{ form.csrf_token }}
-            {{ form.name(class="input", placeholder="ФИО") }}
-            {{ form.email(class="input", placeholder="Email") }}
-            {{ form.title_message(class="input", placeholder="Тема сообщения") }}
-            {{ form.message(class="input", placeholder="Сообщение") }}
+            <p class="error">Не работает!</p>
+            <input type="text" class="input" placeholder="ФИО" required>
+            <input type="email" class="input" placeholder="Email" required>
+            <input type="text" class="input" placeholder="Тема сообщения" required>
+            <input type="text" class="input" placeholder="Сообщение" required>
             <button class="btn" type="submit">Отправить</button>
         </form>
     </div>
 </div>
-
-
-
-{% endblock %}
+{{template "footer.html" .}}

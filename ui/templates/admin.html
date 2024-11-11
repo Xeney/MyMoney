@@ -1,0 +1,9 @@
+{{template "header.html" .}}
+<div class="container admin-auth">
+    <form class="auth" method="post">
+        <input type="text" name="login" placeholder="Введите логин" required>
+        <input type="password" name="password" placeholder="Введите секретный ключ" required>
+        <button class="btn">Войти</button>
+    </form>
+</div>
+{{template "footer.html" .}}
