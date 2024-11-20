@@ -4,41 +4,55 @@ import (
 	// "net/http"
 	"app/middlewares"
 	"app/routers"
+	"log"
 
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	// Инициализация Gin
 	router := gin.Default()
+
+	// Настройка сессий
 	store := middlewares.SetSession()
 
-	// Initializing group router
+	// Группы маршрутов
 	beforeAuthorization := router.Group("/")
 	afterAuthorization := router.Group("/")
 
-	// Using middleware
+	// Применение middleware для групп маршрутов
 	beforeAuthorization.Use(sessions.Sessions("session-name", store))
 	afterAuthorization.Use(sessions.Sessions("session-name", store))
 	afterAuthorization.Use(middlewares.AuthSession)
 
-	// Routing
-	routers.BeforeUserRouter(beforeAuthorization)
-	routers.AfterUserRouter(afterAuthorization)
+	// Регистрация маршрутов
+	routers.SetupBeforeUserRoutes(beforeAuthorization)
+	routers.SetupAfterUserRoutes(afterAuthorization)
 
 	// Load files
 	router.LoadHTMLGlob("./ui/templates/*")
-	router.StaticFile("style.css", "./ui/static/css/style.css")
 
-	router.StaticFile("background-home.jpg", "./ui/static/images/background-home.jpg")
-	router.StaticFile("back-money.jpg", "./ui/static/images/home/back-money.jpg")
-	router.StaticFile("money-logo.jpg", "./ui/static/images/home/money-logo.jpg")
-	router.StaticFile("icon-accent.svg", "./ui/static/images/icons/icon-accent.svg")
-	router.StaticFile("message.svg", "./ui/static/images/icons/message.svg")
-	router.StaticFile("phone.svg", "./ui/static/images/icons/phone.svg")
-	router.StaticFile("pos.svg", "./ui/static/images/icons/pos.svg")
-	router.StaticFile("time.svg", "./ui/static/images/icons/time.svg")
+	// Настройка статических файлов
+	staticFiles := map[string]string{
+		"style.css":           "./ui/static/css/style.css",
+		"background-home.jpg": "./ui/static/images/background-home.jpg",
+		"back-money.jpg":      "./ui/static/images/home/back-money.jpg",
+		"money-logo.jpg":      "./ui/static/images/home/money-logo.jpg",
+		"icon-accent.svg":     "./ui/static/images/icons/icon-accent.svg",
+		"message.svg":         "./ui/static/images/icons/message.svg",
+		"phone.svg":           "./ui/static/images/icons/phone.svg",
+		"pos.svg":             "./ui/static/images/icons/pos.svg",
+		"time.svg":            "./ui/static/images/icons/time.svg",
+	}
 
-	// Start server
-	router.Run(":5000")
+	// Регистрация статических файлов
+	for route, file := range staticFiles {
+		router.StaticFile(route, file)
+	}
+
+	// Запуск сервера
+	if err := router.Run(":5000"); err != nil {
+		log.Fatalf("Не удалось запустить сервер: %v", err)
+	}
 }

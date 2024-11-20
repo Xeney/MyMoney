@@ -5,25 +5,32 @@ import (
 	"app/logic"
 	"database/sql"
 	"errors"
+	"fmt"
 )
 
-// Функция получения пользователя
+// GetUser получает пользователя по логину
 func GetUser(login string) (globals.User, error) {
-	result, err := logic.GetToId_sql(login)
+	result, err := logic.GetUserByLogin(login)
 	if err != nil {
-		if err == errors.New("error account") {
+		switch {
+		case errors.Is(err, sql.ErrNoRows): // Обработка отсутствия пользователя
 			return globals.User{}, errors.New("пользователь не найден")
+		default:
+			return globals.User{}, fmt.Errorf("при извлечении пользователя произошла ошибка: %v", err)
 		}
-		return globals.User{}, errors.New("error sql")
 	}
 	return result, nil
 }
 
-// Функция создания пользователя
+// CreateUser создает нового пользователя с указанными данными
 func CreateUser(name, login, password string) (sql.Result, error) {
-	result, err := logic.Create_sql(name, login, password)
+	if name == "" || login == "" || password == "" {
+		return nil, errors.New("имя, логин и пароль не должны быть пустыми")
+	}
+
+	result, err := logic.CreateUser(name, login, password)
 	if err != nil {
-		return nil, errors.New("error sql")
+		return nil, fmt.Errorf("ошибка при создании пользователя: %v", err)
 	}
 	return result, nil
 }

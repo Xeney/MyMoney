@@ -8,17 +8,48 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func BeforeUserRouter(g *gin.RouterGroup) {
-	g.GET("/", controllers.HomeGetHanler)
-	g.GET("/secure", controllers.SecureGetHandler)
-	g.GET("/feedback", controllers.FeedbackGetHandler)
-	g.GET("/help", controllers.HelpGetHandler)
-	g.GET("/error", controllers.ErrorGetHandler)
-	g.GET("/sign-in", controllers.LoginGetHandler)
-	g.GET("/sign-up", controllers.RegistrationGetHandler)
+// инициализирует маршруты, доступные до авторизации
+func SetupBeforeUserRoutes(g *gin.RouterGroup) {
+	routes := []struct {
+		method      string
+		path        string
+		handlerFunc gin.HandlerFunc
+	}{
+		{"GET", "/", controllers.HomeGetHanler},
+		{"GET", "/secure", controllers.SecureGetHandler},
+		{"GET", "/feedback", controllers.FeedbackGetHandler},
+		{"GET", "/help", controllers.HelpGetHandler},
+		{"GET", "/error", controllers.ErrorGetHandler},
+		{"GET", "/sign-in", controllers.LoginGetHandler},
+		{"GET", "/sign-up", controllers.RegistrationGetHandler},
+	}
+
+	for _, route := range routes {
+		switch route.method {
+		case "GET":
+			g.GET(route.path, route.handlerFunc)
+		}
+	}
 }
 
-func AfterUserRouter(g *gin.RouterGroup) {
-	// g.GET("/dashboard", controllers.DashboardGetHandler)
-	// g.GET("/logout", controllers.LogoutPostHandler)
+// SetupAfterUserRoutes инициализирует маршруты, доступные после авторизации
+func SetupAfterUserRoutes(g *gin.RouterGroup) {
+	routes := []struct {
+		method      string
+		path        string
+		handlerFunc gin.HandlerFunc
+	}{
+		// {"GET", "/dashboard", controllers.DashboardGetHandler},
+		// {"POST", "/logout", controllers.LogoutPostHandler},
+	}
+
+	for _, route := range routes {
+		switch route.method {
+		case "GET":
+			g.GET(route.path, route.handlerFunc)
+		case "POST":
+			g.POST(route.path, route.handlerFunc)
+			// Добавление других методов при необходимости
+		}
+	}
 }
